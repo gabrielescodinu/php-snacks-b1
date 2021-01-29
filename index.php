@@ -7,23 +7,31 @@
 // Olimpia Milano - Cantù | 55 - 60
 
 $matches = [
-    "inter-roma" => [
+    [
         "casa" => "inter",
         "ospite" => "roma",
         "punti casa" => 1,
         "punti ospite" => 2,
     ],
-    "cagliari-brescia" => [
+    [
         "casa" => "cagliari",
         "ospite" => "brescia",
         "punti casa" => 3,
         "punti ospite" => 2,
     ],
+    [
+        "casa" => "frosinone",
+        "ospite" => "benevento",
+        "punti casa" => 5,
+        "punti ospite" => 4,
+    ],
+    [
+        "casa" => "milan",
+        "ospite" => "juventus",
+        "punti casa" => 1,
+        "punti ospite" => 3,
+    ],
 ];
-
-var_dump($matches);
-$partita = array_keys($matches);
-$puntiCasa = array_keys($matches);
 
 
 // PHP Snack 2:
@@ -41,11 +49,32 @@ $puntiCasa = array_keys($matches);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <title>Document</title>
 </head>
+<style>
+    table {
+        border-collapse:collapse
+    }
+    td, th {
+        border:1px solid #ddd;
+        padding: 10px;
+        width: 100px;
+    }
+    *{
+        font-family: "Lato";
+    }
+</style>
 <body>
     <!-- Olimpia Milano - Cantù | 55 - 60 -->
-    <p><?php echo $matches ?></p>
+    <?php
+        for ($i=0; $i<count($matches); $i++) {
+            $match = $matches[$i];
+    ?>
+        <table>
+            <tr><td><?php echo $match["casa"]; ?></td><td><?php echo $match["ospite"]; ?></td><td><?php echo $match["punti casa"]; ?></td><td><?php echo $match["punti ospite"]; ?></td></tr>
+        </table>
+        <?php } ?>
     
 </body>
 </html>
