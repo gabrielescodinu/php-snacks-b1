@@ -33,7 +33,6 @@ $matches = [
     ],
 ];
 
-
 // PHP Snack 2:
 // Passare come parametri GET name, mail e age e verificare (cercando i metodi che non
 // conosciamo nella documentazione) che:
@@ -41,6 +40,30 @@ $matches = [
 // 2. mail contenga un punto e una chiocciola
 // 3. age sia un numero.
 // Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+
+$name = $_GET["name"];
+
+if ($name > 3){
+    echo " Accesso riuscito";
+} else {
+    echo " Accesso negato";
+};
+
+$email = $_GET["email"];
+
+if (strpos($email, '@') && strpos($email, '.')) {
+    echo " Accesso riuscito";
+} else {
+    echo " Accesso negato";
+};
+
+$age = $_GET["30"];
+
+if ($age == intval) {
+    echo " Accesso riuscito";
+} else {
+    echo " Accesso negato";
+};
 
 ?>
 
