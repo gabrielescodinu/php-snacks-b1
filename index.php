@@ -43,7 +43,7 @@ $matches = [
 
 $name = $_GET["name"];
 
-if ($name > 3){
+if (strlen($name) > 3){
     echo " Accesso riuscito";
 } else {
     echo " Accesso negato";
@@ -51,7 +51,7 @@ if ($name > 3){
 
 $email = $_GET["email"];
 
-if (strpos($email, '@') && strpos($email, '.')) {
+if (strpos($email, '@') !== false && strpos($email, '.') !== false) {
     echo " Accesso riuscito";
 } else {
     echo " Accesso negato";
@@ -59,7 +59,7 @@ if (strpos($email, '@') && strpos($email, '.')) {
 
 $age = $_GET["30"];
 
-if ($age == intval) {
+if (is_numeric($age)) {
     echo " Accesso riuscito";
 } else {
     echo " Accesso negato";
